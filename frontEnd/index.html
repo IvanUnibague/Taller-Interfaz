@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tareas - Interfaz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Gestor de Tareas</h1>
+  </header>
+  
+  <main>
+    <section class="form">
+      <input type="text" id="nuevaTarea" placeholder="Escribe una tarea...">
+      <button onclick="agregarTarea()">Agregar</button>
+    </section>
+
+    <section class="lista">
+      <h2>Lista de Tareas</h2>
+      <ul id="listaTareas"></ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
