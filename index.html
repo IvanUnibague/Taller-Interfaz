@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gestor de Proyectos & Tareas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Gestor de Proyectos y Tareas</h1>
+    <p class="subtitle">Crud de Proyectos y Tareas</p>
+  </header>
+
+  <nav class="tabs">
+    <button id="tab-projects" class="active">Proyectos</button>
+    <button id="tab-tasks">Tareas</button>
+  </nav>
+
+  <main>
+    <!-- Sección Proyectos -->
+    <section id="section-projects" class="section active">
+      <div class="card">
+        <h2>Crear Proyecto</h2>
+        <form id="project-form">
+          <label>Título
+            <input id="proj-title" name="title" required maxlength="120" />
+          </label>
+          <label>Descripción
+            <textarea id="proj-description" name="description" rows="3"></textarea>
+          </label>
+          <label>Tecnologías (separadas por coma)
+            <input id="proj-technologies" name="technologies" />
+          </label>
+          <div class="actions">
+            <button type="submit" id="proj-create-btn">Crear proyecto</button>
+            <button type="button" id="proj-refresh-btn">Refrescar proyectos</button>
+          </div>
+          <div id="proj-message" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+
+      <section id="proj-list-section">
+        <h2>Proyectos existentes</h2>
+        <div id="proj-projects" class="grid"></div>
+      </section>
+    </section>
+
+    <!-- Sección Tareas -->
+    <section id="section-tasks" class="section">
+      <div class="card">
+        <h2>Crear Tarea</h2>
+        <form id="task-form">
+          <label>Título
+            <input id="task-titulo" name="titulo" required maxlength="50" />
+          </label>
+          <label>Descripción
+            <textarea id="task-descripcion" name="descripcion" rows="3"></textarea>
+          </label>
+          <label>Completada
+            <select id="task-completada" name="completada">
+              <option value="false">No</option>
+              <option value="true">Sí</option>
+            </select>
+          </label>
+          <label>Fecha límite
+            <input id="task-fecha_limite" name="fecha_limite" type="datetime-local" />
+          </label>
+          <label>Prioridad (entero)
+            <input id="task-prioridad" name="prioridad" type="number" />
+          </label>
+          <label>Categoría
+            <input id="task-categoria" name="categoria" maxlength="30" />
+          </label>
+          <div class="actions">
+            <button type="submit" id="task-create-btn">Crear tarea</button>
+            <button type="button" id="task-refresh-btn">Refrescar tareas</button>
+          </div>
+          <div id="task-message" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+
+      <section id="task-list-section">
+        <h2>Tareas existentes</h2>
+        <div id="task-tasks" class="grid"></div>
+      </section>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
+
