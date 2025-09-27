@@ -1,183 +1,132 @@
-/* ===== Reset sencillo ===== */
-* {
-  box-sizing: border-box;
+/* === Fondo general === */
+body {
+  background-color: #f4f6f8;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
-body {
-  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-  background: #f0f2f5;
-  color: #333;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  padding: 40px 15px;
-}
-
-/* ===== Títulos ===== */
+/* === Título principal === */
 h1 {
-  font-size: 2.2rem;
-  margin-bottom: 20px;
-  font-weight: 700;
-  color: #222;
+  text-align: center;
+  margin-top: 20px;
+  color: #333;
+  font-size: 32px;
 }
 
-h2 {
-  font-size: 1.4rem;
-  margin: 25px 0 10px 0;
-  color: #444;
+/* === Formulario vertical centrado === */
+.formulario {
+  display: flex;
+  flex-direction: column; /* apila en vertical */
+  gap: 8px; /* espacio entre inputs */
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  max-width: 400px; /* ancho fijo */
+  margin: 20px auto; /* centrado horizontal */
 }
 
-/* ===== Formulario ===== */
-form {
+.formulario label {
+  font-weight: bold;
+  color: #333;
+  margin-top: 5px;
+}
+
+.formulario input,
+.formulario textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
   width: 100%;
-  max-width: 500px;
-  background: #ffffff;
-  padding: 25px 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+.formulario textarea {
+  min-height: 60px;
+  resize: vertical;
+}
+
+.formulario button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+  transition: background-color .3s;
+}
+
+.formulario button:hover {
+  background-color: #0056b3;
+}
+
+/* === Lista de tareas centrada === */
+#lista-tareas {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-}
-
-form input,
-form textarea,
-form button {
-  font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 10px 12px;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-form input:focus,
-form textarea:focus {
-  border-color: #4a90e2;
-  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.15);
-  outline: none;
-}
-
-form textarea {
-  resize: vertical;
-  min-height: 60px;
-}
-
-form button {
-  background: #4a90e2;
-  color: #fff;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  text-align: center;
-}
-
-form button:hover {
-  background: #357ab8;
-}
-
-/* ===== Lista de tareas ===== */
-#lista-tareas {
+  align-items: center; /* centra las tarjetas */
   width: 100%;
-  max-width: 600px;
-  margin-top: 20px;
-  list-style: none;
+  list-style: none; /* quita puntos */
+  padding: 0;
+  margin: 0;
 }
 
-#lista-tareas li {
-  background: #fff;
-  margin-bottom: 12px;
-  padding: 15px 20px;
+/* === Tarjeta de tarea === */
+.card {
+  background: white;
   border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-#lista-tareas li:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-}
-
-#lista-tareas .info {
-  font-size: 1rem;
-  color: #333;
-}
-
-#lista-tareas .btn-completar {
-  padding: 6px 12px;
-  background: #28a745;
-  color: #fff;
-  font-size: 0.9rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-#lista-tareas .btn-completar:hover {
-  background: #218838;
-}
-#lista-tareas .btn-completar:disabled {
-  background: #6c757d;
-  cursor: not-allowed;
-}
-/* Texto grande y bonito para las tarjetas */
-#lista-tareas li {
-  background: #fff;
+  padding: 15px;
   margin-bottom: 15px;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 350px; /* ancho fijo para todas las tarjetas */
+  box-sizing: border-box;
 }
 
-#lista-tareas .info {
-  flex: 1;
+.card h3 {
+  margin-top: 0;
+  color: #333;
+  font-size: 20px;
 }
 
-#lista-tareas .info h3 {
-  font-size: 1.3rem;
-  margin-bottom: 6px;
-  color: #222;
-}
-
-#lista-tareas .info .descripcion {
-  font-size: 1rem;
-  margin-bottom: 6px;
+.card p {
+  margin: 5px 0;
   color: #555;
 }
 
-#lista-tareas .info p {
-  font-size: 0.95rem;
-  margin-bottom: 4px;
-  color: #333;
-}
-
-#lista-tareas .info .estado {
-  font-weight: 600;
-  margin-top: 8px;
-  color: #007bff;
-}
-
-#lista-tareas .btn-completar {
-  padding: 8px 12px;
-  background: #28a745;
-  color: #fff;
-  font-size: 0.9rem;
+/* === Botones dentro de la tarjeta === */
+.card button {
+  color: white;
   border: none;
-  border-radius: 6px;
+  padding: 6px 12px;
+  margin-top: 10px;
+  margin-right: 5px;
+  border-radius: 5px;
   cursor: pointer;
-  height: fit-content;
+  font-size: 14px;
 }
 
-#lista-tareas .btn-completar:hover {
-  background: #218838;
+.card button:first-of-type {
+  background-color: #27ae60; /* verde */
+}
+
+.card button:last-of-type {
+  background-color: #e74c3c; /* rojo */
+}
+
+.card button:first-of-type:hover {
+  background-color: #1f8d4c;
+}
+
+.card button:last-of-type:hover {
+  background-color: #c0392b;
+}
+#titulo-tareas {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  color: #333;
 }
