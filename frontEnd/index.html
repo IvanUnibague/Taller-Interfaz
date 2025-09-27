@@ -3,25 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tareas - Interfaz</title>
+  <title>Gestor de Tareas</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Gestor de Tareas</h1>
-  </header>
-  
-  <main>
-    <section class="form">
-      <input type="text" id="nuevaTarea" placeholder="Escribe una tarea...">
-      <button onclick="agregarTarea()">Agregar</button>
-    </section>
+  <h1>Gestor de Tareas</h1>
 
-    <section class="lista">
-      <h2>Lista de Tareas</h2>
-      <ul id="listaTareas"></ul>
-    </section>
-  </main>
+  <!-- Formulario para agregar tareas -->
+  <form id="form-tarea" class="formulario">
+    <input type="text" id="titulo" placeholder="Título" required>
+    <textarea id="descripcion" placeholder="Descripción"></textarea>
+    <input type="datetime-local" id="fecha_limite" placeholder="Fecha límite">
+    <input type="number" id="prioridad" placeholder="Prioridad">
+    <input type="text" id="categoria" placeholder="Categoría">
+    <button type="submit">Agregar Tarea</button>
+  </form>
+
+  <!-- Lista de tareas -->
+  <h2>Tareas:</h2>
+  <ul id="lista-tareas"></ul>
 
   <script src="app.js"></script>
 </body>
